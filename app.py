@@ -57,16 +57,16 @@ def dataUnderstanding(df_csv):
     df_subset= df_csv[['Age', 'Sex','Race','DeathCity','ResidenceState','Cocaine']]
     st.write(''' ## Data Understanding
 
-            The dataset provide a variant of drugs death. In this case, only need one drug which is Cocaine.
+The dataset provide a variant of drugs death. In this case, only need one drug which is Cocaine.
 
-            The following attributes will be used in the analysis:
+The following attributes will be used in the analysis:
 
-            - Age
-            - Sex
-            - Race
-            - DeathCity
-            - ResidenceState
-            - Cocaine
+- Age
+- Sex
+- Race
+- DeathCity
+- ResidenceState
+- Cocaine
              ''')
     st.write("### Subset Data:")
     st.write('In this section, i will analyze which attributes/columns will be removed.')
