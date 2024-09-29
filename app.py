@@ -57,7 +57,8 @@ def dataUnderstanding(df_csv):
     df_subset= df_csv[['Age', 'Sex','Race','DeathCity','ResidenceState','Cocaine']]
     st.write(''' ## Data Understanding
 
-The dataset provide a variant of drugs death. In this case, only need one drug which is Cocaine.
+The dataset provide a variant of drugs death. In this case, only need one drug which is Cocaine. This dataset records from 2015 to 2018
+
 
 The following attributes will be used in the analysis:
 
