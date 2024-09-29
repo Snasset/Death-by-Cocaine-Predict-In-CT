@@ -57,16 +57,16 @@ def dataUnderstanding(df_csv):
     df_subset= df_csv[['Age', 'Sex','Race','DeathCity','ResidenceState','Cocaine']]
     st.write(''' ## Data Understanding
 
-The dataset provide a variant of drugs death. In this case, only need one drug which is Cocaine.
+            The dataset provide a variant of drugs death. In this case, only need one drug which is Cocaine.
 
-The following attributes will be used in the analysis:
+            The following attributes will be used in the analysis:
 
-- Age
-- Sex
-- Race
-- DeathCity
-- ResidenceState
-- Cocaine
+            - Age
+            - Sex
+            - Race
+            - DeathCity
+            - ResidenceState
+            - Cocaine
              ''')
     st.write("### Subset Data:")
     st.write('In this section, i will analyze which attributes/columns will be removed.')
@@ -74,15 +74,8 @@ The following attributes will be used in the analysis:
     st.write(df_subset.head())
 
     # Mengambil data berdasarkan nilai CT (Connecticut)
-    df_subset_ct_predrop = df_subset[df_subset['ResidenceState'] == 'CT']
-    df_subset_ct = df_subset_ct_predrop.drop(columns = 'ResidenceState')
-    df_subset_ct = df_subset_ct.astype({'Age': int}) 
-    st.write("### Subset Data CT:")
-    st.write('Take all the residence state in CT and then remove ResidenceState. Because all the data will always in CT.')
-    st.write('Data')
-    st.write(df_subset_ct.head())
     st.write('Statistic Description')
-    st.write(df_subset_ct.describe(include='all'))
+    st.write(df_subset.describe(include='all'))
     st.divider()
 
 
@@ -91,16 +84,12 @@ def dataPrep(df_csv):
     st.write("## Data Preperation:")
      # Take all the needed columns
     df_subset= df_csv[['Age', 'Sex','Race','DeathCity','ResidenceState','Cocaine']]
-    st.write("### Subset Data:")
-    st.write('In this section, i will analyze which attributes/columns will be removed.')
-    st.write('These are the nessecary columns')
-    st.write(df_subset.head())
 
     # Mengambil data berdasarkan nilai CT (Connecticut)
     df_subset_ct_predrop = df_subset[df_subset['ResidenceState'] == 'CT']
     df_subset_ct = df_subset_ct_predrop.drop(columns = 'ResidenceState')
     df_subset_ct = df_subset_ct.astype({'Age': int}) 
-    st.write("## Subset Data CT:")
+    st.write("### Subset Data CT:")
     st.write('Take all the residence state in CT and then remove ResidenceState. Because all the data will always in CT.')
     st.write('Data')
     st.write(df_subset_ct.head())
@@ -239,7 +228,7 @@ def modelling(df_subset_ct):
     st.write(df_r_scale.head())
 
     ### Model
-    st.write("#### Logistic Regression")
+    st.write("### Logistic Regression")
     x = df_r_scale.iloc[:,0:-1].values
     y = df_r_scale.iloc[:,-1].values
 
